@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -66,4 +68,32 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    //Hilt and Navigation
+    implementation(libs.androidx.hilt.navigation.compose)
+
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+
+    //Paging 3
+    implementation(libs.androidx.paging.runtime)
+    // optional - Jetpack Compose integration
+    implementation(libs.androidx.paging.compose)
+
+    //JSON
+    implementation(libs.kotlinx.serialization.json)
+
+    //Coil - Coil Image Loading Library
+    implementation(libs.coil.compose)
+
+    //Splash Screen
+    implementation(libs.androidx.core.splashscreen)
+
+    //Coroutines
+    implementation(libs.kotlinx.coroutines.android)
 }
