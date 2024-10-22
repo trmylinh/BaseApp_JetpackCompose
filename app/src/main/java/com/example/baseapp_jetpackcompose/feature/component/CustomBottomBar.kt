@@ -40,7 +40,7 @@ fun CustomBottomBar(
         elevation = 10.dp,
         backgroundColor = MaterialTheme.colors.onSecondary
     ) {
-        BottomNav.values().forEach { screen ->
+        BottomNav.entries.forEach { screen ->
             val selected = currentDestination.isBottomNavDestinationInHierarchy(screen)
             val primaryColor = MaterialTheme.colors.primary
             val secondaryColor = MaterialTheme.colors.secondary

@@ -15,7 +15,7 @@
         android:theme="@style/Theme.BaseApp_JetpackCompose"
         tools:targetApi="31">
         <activity
-            android:name=".feature.screen.splash.SplashActivity"
+            android:name=".feature.splash.SplashActivity"
             android:exported="false"
             android:label="@string/title_activity_splash"
             android:theme="@style/Theme.BaseApp_JetpackCompose" />

@@ -33,7 +33,7 @@ fun CustomSnackBar(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun BodyPreview() {
     CustomSnackBar(
