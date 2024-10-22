@@ -19,7 +19,8 @@ fun NavGraph() {
                 if(navItem.route == currentRoute){
 
 
-                }            }
+                }
+            }
         }
     ) {
 
