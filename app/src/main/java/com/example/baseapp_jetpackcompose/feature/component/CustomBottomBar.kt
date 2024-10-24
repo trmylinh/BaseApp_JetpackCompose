@@ -22,6 +22,7 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.navOptions
 import com.example.baseapp_jetpackcompose.R
+import com.example.baseapp_jetpackcompose.feature.character.presentation.navigation.navigateCharacter
 import com.example.baseapp_jetpackcompose.feature.navigation.BottomNav
 
 @Composable
@@ -86,7 +87,7 @@ fun navigateToBottomNavDestination(bottomNav: BottomNav, navController: NavContr
         }
 
         when (bottomNav) {
-//            BottomNav.CHARACTERS -> navController.navigateCharacter(bottomNavOptions)
+            BottomNav.CHARACTERS -> navController.navigateCharacter(bottomNavOptions)
 //            BottomNav.EPISODES -> navController.navigateToEpisodes(bottomNavOptions)
 //            BottomNav.FAVORITES -> navController.navigateToFavorites(bottomNavOptions)
 //            BottomNav.SEARCH -> navController.navigateToSearch(bottomNavOptions)

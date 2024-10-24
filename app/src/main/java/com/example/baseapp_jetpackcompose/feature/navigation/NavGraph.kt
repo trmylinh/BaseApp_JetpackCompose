@@ -9,6 +9,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.baseapp_jetpackcompose.feature.character.presentation.navigation.characterNavigationRoute
+import com.example.baseapp_jetpackcompose.feature.character.presentation.navigation.characterScreen
 import com.example.baseapp_jetpackcompose.feature.component.CustomBottomBar
 import com.example.baseapp_jetpackcompose.feature.component.CustomFloatingActionBar
 import com.example.baseapp_jetpackcompose.feature.component.CustomScaffold
@@ -42,10 +44,10 @@ fun NavGraph() {
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = "",
+            startDestination = characterNavigationRoute,
             modifier = Modifier.padding(innerPadding),
-        ) {
-
+        ){
+            characterScreen {}
         }
     }
 

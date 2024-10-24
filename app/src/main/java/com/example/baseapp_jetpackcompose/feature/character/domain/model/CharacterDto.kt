@@ -14,7 +14,6 @@ data class CharacterDto(
     val name: String?,
     val origin: LocationDto?,
     val species: String?,
-    val status: String?,
     val type: String?,
     val url: String?,
     val isFavorite: Boolean = false

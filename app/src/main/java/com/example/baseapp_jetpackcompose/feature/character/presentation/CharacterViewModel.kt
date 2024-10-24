@@ -8,6 +8,7 @@ import com.example.baseapp_jetpackcompose.core.domain.usecase.character.GetChara
 import com.example.baseapp_jetpackcompose.core.domain.viewstate.IViewEvent
 import com.example.baseapp_jetpackcompose.core.domain.viewstate.character.CharacterViewState
 import com.example.baseapp_jetpackcompose.feature.character.domain.model.CharacterDto
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,6 +17,7 @@ sealed class CharacterViewEvent : IViewEvent {
     class UpdateFavorite(val dto: CharacterDto) : CharacterViewEvent()
 }
 
+@HiltViewModel
 class CharacterViewModel @Inject constructor(
     private val getCharacterUseCase: GetCharacterUseCase
 ): BaseViewModel<CharacterViewState, CharacterViewEvent>(){

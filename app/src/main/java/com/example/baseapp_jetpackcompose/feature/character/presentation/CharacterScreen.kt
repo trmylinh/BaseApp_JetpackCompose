@@ -20,6 +20,7 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.baseapp_jetpackcompose.core.utils.Utility.rememberFlowWithLifecycle
 import com.example.baseapp_jetpackcompose.feature.character.domain.model.CharacterDto
+import com.example.baseapp_jetpackcompose.feature.component.CharacterCard
 import com.example.baseapp_jetpackcompose.feature.component.CustomScaffold
 import com.example.baseapp_jetpackcompose.feature.component.CustomTopBar
 import kotlinx.coroutines.flow.Flow
@@ -80,7 +81,15 @@ fun Content(
 
                 }
             } else if (pagedData != null && pagingItems != null) {
-
+                items(pagingItems!!.itemCount) { index ->
+                    CharacterCard(
+                        character = pagingItems!![index],
+                        detailClick = {
+                            clickDetail.invoke(pagingItems!![index])
+                        },
+                        onTriggerEvent = {},
+                    )
+                }
             }
 
         }

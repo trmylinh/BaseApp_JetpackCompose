@@ -3,6 +3,10 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.serialization)
     alias(libs.plugins.compose.compiler)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+//    id("dagger.hilt.android.plugin")
+//    id("com.google.devtools.ksp")
 }
 
 android {
@@ -19,6 +23,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
+        }
+        kapt {
+            correctErrorTypes = true
+            useBuildCache = true
         }
     }
 
@@ -40,6 +48,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -77,13 +86,32 @@ dependencies {
     //ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
-    //Hilt and Navigation
-    implementation(libs.androidx.hilt.navigation.compose)
+//    //Hilt and Navigation
+//    implementation(libs.androidx.hilt.navigation.compose)
+//    implementation(libs.androidx.hilt.navigation.fragment)
+////    implementation(libs.androidx.hilt.work)
+////    // When using Kotlin.
+////    kapt("androidx.hilt:hilt-compiler:1.2.0")
+////    kapt("com.google.dagger:hilt-compiler:2.51")
+//    // Dagger Core
+//    implementation("com.google.dagger:dagger:2.51")
+//    kapt("com.google.dagger:dagger-compiler:2.51")
+//
+//// Dagger Android
+//    api("com.google.dagger:dagger-android:2.37")
+//    api ("com.google.dagger:dagger-android-support:2.37")
+//    kapt("com.google.dagger:dagger-android-processor:2.37")
+
+// Dagger - Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
 
     //Paging 3
     implementation(libs.androidx.paging.runtime)
@@ -95,6 +123,8 @@ dependencies {
 
     //Coil - Coil Image Loading Library
     implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+    implementation(libs.coil.kt.coil.compose)
 
     //Splash Screen
     implementation(libs.androidx.core.splashscreen)
@@ -106,5 +136,14 @@ dependencies {
     implementation(libs.androidx.material)
 
     //Material icons
-    implementation("androidx.compose.material:material-icons-extended:1.5.0")
+    implementation(libs.androidx.material.icons.extended)
+
+    //  Http inspector
+    debugImplementation(libs.library)
+    releaseImplementation(libs.library.no.op)
+}
+apply(plugin = "dagger.hilt.android.plugin")
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
