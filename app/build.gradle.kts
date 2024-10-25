@@ -87,8 +87,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
 //    //Hilt and Navigation
-//    implementation(libs.androidx.hilt.navigation.compose)
-//    implementation(libs.androidx.hilt.navigation.fragment)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.hilt.navigation.fragment)
 ////    implementation(libs.androidx.hilt.work)
 ////    // When using Kotlin.
 ////    kapt("androidx.hilt:hilt-compiler:1.2.0")

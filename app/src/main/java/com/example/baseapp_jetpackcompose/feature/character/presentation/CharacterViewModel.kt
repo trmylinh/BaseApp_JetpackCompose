@@ -42,9 +42,7 @@ class CharacterViewModel @Inject constructor(
     override fun onTriggerEvent(event: CharacterViewEvent) {
         viewModelScope.launch {
             when(event){
-                is CharacterViewEvent.UpdateFavorite -> {
-
-                }
+                is CharacterViewEvent.UpdateFavorite -> {}
             }
         }
     }
