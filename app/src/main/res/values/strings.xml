@@ -3,4 +3,5 @@
     <string name="title_activity_splash">SplashActivity</string>
 
     <string name="favorite_screen_title">Favorites</string>
+    <string name="characters_screen_title">Character</string>
 </resources>
